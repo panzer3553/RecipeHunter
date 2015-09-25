@@ -1,3 +1,16 @@
 <h1>Recipes#index</h1>
 <p>Find me in app/views/recipes/index.html.erb</p>
-<%= @courses['recipes'] %>
+<table>
+  <tr>
+    <th>Image</th>
+    <th>Title</th>
+    <th>Social Rank</th>
+  </tr>
+<%@recipes.each do |recipe| %>
+  <tr>
+    <td><%= image_tag(recipe['image_url'], width: 100, height: 100)%></td>
+    <td><%= recipe['title'] %></td>
+    <td><%= recipe['social_rank'] %></td>
+  </tr>
+  <% end %>
+</table>

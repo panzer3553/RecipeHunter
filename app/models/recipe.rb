@@ -5,6 +5,6 @@ class Recipe
   format :json
 
   def self.for term
-    get("", query: { q: term})
+    get("", query: { q: term})['recipes']
   end
   end
