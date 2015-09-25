@@ -1,7 +1,9 @@
 class Recipe
   include HTTParty
-  base_uri 'http://food2fork.com/api/search'
-  default_params key: 'b4544f69267a7c4e10fbbb520a4e2b34'
+  key_value = ENV['FOOD2FORK_KEY']
+  hostport = ENV['FOOD2FORK_SERVER_AND_PORT'] || 'www.food2fork.com'
+  base_uri "http://#{hostport}/api/search"
+  default_params key: key_value
   format :json
 
   def self.for term

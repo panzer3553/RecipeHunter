@@ -1,5 +1,5 @@
-<h1>Recipes#index</h1>
-<p>Find me in app/views/recipes/index.html.erb</p>
+<h1>Find your recipe</h1>
+<p>Search for <%= @search_term %></p>
 <table>
   <tr>
     <th>Image</th>
@@ -8,9 +8,10 @@
   </tr>
 <%@recipes.each do |recipe| %>
   <tr>
-    <td><%= image_tag(recipe['image_url'], width: 100, height: 100)%></td>
-    <td><%= recipe['title'] %></td>
+    <td><%= link_to(image_tag(recipe['image_url'], width: 100, height: 100), recipe['f2f_url']) %></td>
+    <td><%= link_to(sanitize(recipe['title']), recipe['f2f_url'])%></td>
     <td><%= recipe['social_rank'] %></td>
   </tr>
   <% end %>
 </table>
+<p>Powered By Food2Fork.com</p>

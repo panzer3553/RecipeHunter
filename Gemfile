@@ -22,6 +22,7 @@ group :development, :test do
   gem 'web-console', '~> 2.0'
 
   gem 'spring'
+  gem "figaro", "~> 0.7.0"
 end
 
 gem 'httparty'
